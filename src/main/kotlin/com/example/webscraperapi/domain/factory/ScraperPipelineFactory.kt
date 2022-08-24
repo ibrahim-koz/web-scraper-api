@@ -15,7 +15,7 @@ class ScraperPipelineFactory {
             "https://eatchefly.com/" -> ScraperPipeline(BrowserFetcher(), EatCheflyHTMLScraper())
             "https://optichronix.com/" -> ScraperPipeline(HTTPFetcher(), OptiChroniXHTMLScraper())
             "https://risekit.co/" -> ScraperPipeline(HTTPFetcher(), RiseKitHTMLScraper())
-//            "https://buildly.io/" -> ScraperPipeline(HTTPFetcher(), BuildlyIoHTMLScraper())
+            "https://buildly.io/" -> ScraperPipeline(BrowserFetcher(), BuildlyIoHTMLScraper())
 //            "https://tryeazy.co/" -> ScraperPipeline(HTTPFetcher(), TryEazyHTMLScraper())
 //            "https://librainy.org/" -> ScraperPipeline(HTTPFetcher(), LibrayinyOrgHTMLScraper())
             else -> throw RelevantScraperNotFoundException()
