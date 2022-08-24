@@ -23,8 +23,7 @@ class ScrapePort {
         "https://optichronix.com/",
         "https://risekit.co/",
         "https://buildly.io/",
-        "https://tryeazy.co/",
-        "https://librainy.org/"
+        "https://ibrainy.org/"
     )
 
     @PostMapping
