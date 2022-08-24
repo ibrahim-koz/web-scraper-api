@@ -12,42 +12,42 @@ class ScraperPipelineFactory {
         when (path) {
             "https://peachscore.com/" -> ScraperPipeline(
                 HTTPFetcher(),
-                PeachscoreHTMLScraper()
+                PeachscoreHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             "https://slack.com/" -> ScraperPipeline(
                 HTTPFetcher(),
-                SlackHTMLScraper()
+                SlackHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             "https://along.technology/" -> ScraperPipeline(
                 BrowserFetcher(),
-                AlongTechnologyHTMLScraper()
+                AlongTechnologyHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             "https://eatchefly.com/" -> ScraperPipeline(
                 BrowserFetcher(),
-                EatCheflyHTMLScraper()
+                EatCheflyHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             "https://optichronix.com/" -> ScraperPipeline(
                 HTTPFetcher(),
-                OptiChroniXHTMLScraper()
+                OptiChroniXHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             "https://risekit.co/" -> ScraperPipeline(
                 HTTPFetcher(),
-                RiseKitHTMLScraper()
+                RiseKitHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             "https://buildly.io/" -> ScraperPipeline(
                 BrowserFetcher(),
-                BuildlyIoHTMLScraper()
+                BuildlyIoHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             "https://ibrainy.org/" -> ScraperPipeline(
                 BrowserFetcher(),
-                IBrainyOrgHTMLScraper()
+                IBrainyOrgHTMLScraper(NonAlphanumericCharacterSanitizer())
             )
 
             else -> throw RelevantScraperNotFoundException()

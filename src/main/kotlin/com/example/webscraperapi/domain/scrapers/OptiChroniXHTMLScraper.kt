@@ -1,13 +1,13 @@
 package com.example.webscraperapi.domain.scrapers
 
 import com.example.webscraperapi.domain.dto.CompanyInfo
+import com.example.webscraperapi.domain.sanitizers.ISanitizer
 import it.skrape.core.htmlDocument
-import it.skrape.selects.and
 import it.skrape.selects.attribute
 import it.skrape.selects.eachText
 import it.skrape.selects.html5.*
 
-class OptiChroniXHTMLScraper : IScraper {
+class OptiChroniXHTMLScraper(override val sanitizer: ISanitizer) : IScraper {
     override fun scrape(data: String) = htmlDocument(data) {
         CompanyInfo(
             name = meta {
