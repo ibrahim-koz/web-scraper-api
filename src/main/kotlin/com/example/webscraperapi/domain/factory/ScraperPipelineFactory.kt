@@ -12,50 +12,42 @@ class ScraperPipelineFactory {
         when (path) {
             "https://peachscore.com/" -> ScraperPipeline(
                 HTTPFetcher(),
-                PeachscoreHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                PeachscoreHTMLScraper()
             )
 
             "https://slack.com/" -> ScraperPipeline(
                 HTTPFetcher(),
-                SlackHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                SlackHTMLScraper()
             )
 
             "https://along.technology/" -> ScraperPipeline(
                 BrowserFetcher(),
-                AlongTechnologyHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                AlongTechnologyHTMLScraper()
             )
 
             "https://eatchefly.com/" -> ScraperPipeline(
                 BrowserFetcher(),
-                EatCheflyHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                EatCheflyHTMLScraper()
             )
 
             "https://optichronix.com/" -> ScraperPipeline(
                 HTTPFetcher(),
-                OptiChroniXHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                OptiChroniXHTMLScraper()
             )
 
             "https://risekit.co/" -> ScraperPipeline(
                 HTTPFetcher(),
-                RiseKitHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                RiseKitHTMLScraper()
             )
 
             "https://buildly.io/" -> ScraperPipeline(
                 BrowserFetcher(),
-                BuildlyIoHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                BuildlyIoHTMLScraper()
             )
 
             "https://ibrainy.org/" -> ScraperPipeline(
                 BrowserFetcher(),
-                IBrainyOrgHTMLScraper(),
-                NonAlphanumericCharacterSanitizer()
+                IBrainyOrgHTMLScraper()
             )
 
             else -> throw RelevantScraperNotFoundException()
