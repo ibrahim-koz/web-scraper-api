@@ -4,10 +4,7 @@ import com.example.webscraperapi.domain.context.ScraperPipeline
 import com.example.webscraperapi.domain.exceptions.RelevantScraperNotFoundException
 import com.example.webscraperapi.domain.readers.BrowserFetcher
 import com.example.webscraperapi.domain.readers.HTTPFetcher
-import com.example.webscraperapi.domain.scrapers.AlongTechnologyHTMLScraper
-import com.example.webscraperapi.domain.scrapers.EatCheflyHTMLScraper
-import com.example.webscraperapi.domain.scrapers.PeachscoreHTMLScraper
-import com.example.webscraperapi.domain.scrapers.SlackHTMLScraper
+import com.example.webscraperapi.domain.scrapers.*
 
 class ScraperPipelineFactory {
     fun createPipeline(path: String): ScraperPipeline =
@@ -16,7 +13,7 @@ class ScraperPipelineFactory {
             "https://slack.com/" -> ScraperPipeline(HTTPFetcher(), SlackHTMLScraper())
             "https://along.technology/" -> ScraperPipeline(BrowserFetcher(), AlongTechnologyHTMLScraper())
             "https://eatchefly.com/" -> ScraperPipeline(BrowserFetcher(), EatCheflyHTMLScraper())
-//            "https://optichronix.com/" -> ScraperPipeline(HTTPFetcher(), OptiChronixHTMLScraper())
+            "https://optichronix.com/" -> ScraperPipeline(HTTPFetcher(), OptiChroniXHTMLScraper())
 //            "https://risekit.co/" -> ScraperPipeline(HTTPFetcher(), RiseKitHTMLScraper())
 //            "https://buildly.io/" -> ScraperPipeline(HTTPFetcher(), BuildlyIoHTMLScraper())
 //            "https://tryeazy.co/" -> ScraperPipeline(HTTPFetcher(), TryEazyHTMLScraper())
