@@ -13,8 +13,20 @@ class ScrapePort {
     @ExceptionHandler(RelevantScraperNotFoundException::class)
     fun handleBadRequest(): ResponseEntity<String> =
         ResponseEntity("A scraper relevant to this domain name is absent.", HttpStatus.BAD_REQUEST)
+
     @GetMapping
-    fun get() = listOf("https://peachscore.com/", "https://slack.com/")
+    fun get() = listOf(
+        "https://peachscore.com/",
+        "https://slack.com/",
+        "https://along.technology/",
+        "https://eatchefly.com/",
+        "https://optichronix.com/",
+        "https://risekit.co/",
+        "https://buildly.io/",
+        "https://tryeazy.co/",
+        "https://librainy.org/"
+    )
+
     @PostMapping
     fun post(@RequestBody scrapeRequest: ScrapeRequest) = scrape(scrapeRequest.path)
 }
